@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 7</title>
+</head>
+
+<body>
+    <script>
+        alert("Добро пожаловать в игру 'Русская рулетка'!");
+
+        var rounds = 0;
+
+        do {
+            var a = parseInt(prompt("Для выстрела введи '1'! или другое для завершения!"));
+
+            if (((Math.random() * 6) > 1) && (a == 1)){
+                rounds++;
+                alert("Ты выжил!"); 
+            } else if (a != 1){
+                alert("Ты выжил!"); 
+            } else {
+                alert("Ты труп!");
+                break;
+            }         
+                
+            } while (a == 1);
+
+            alert("Ты продержался " + rounds + " раундов!");
+        
+        
+//        Вариант от преподавателя:
+//        
+//        var n = 0;
+//        do {
+//            if ((Math.random() * 6) < 1) {
+//                alert("финита ля комедия");
+//                break;
+//            }
+//            
+//            n++;
+//        } while (prompt("1 - играем, другое - стоп:") == "1");
+//            
+//        alert("Сыграно раундов " + n);
+
+    </script>
+</body>
+
+</html>
