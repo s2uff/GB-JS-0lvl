@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Длинна последовательности</title>
+</head>
+<body>
+    <script>
+    
+        var l = parseInt(prompt("Введите число раундов игры:"));
+        var game = [];
+        
+        for(var n = 0; n < l; n++) {
+            game.push(Math.round(Math.random()*2-1));
+        }
+        
+        alert("Результат бросков: " + game);
+        
+        var count = 0;
+        var maxcount = 0;
+        
+        for (n = 0; n < game.length; n++) {
+            if (game[n] == 0) {
+                count++;
+                
+                if (count > maxcount) {
+                maxcount = count; 
+                }
+            
+            } else {
+                count = 0;
+            }
+            };
+        
+        alert("Максимальная длинна последовательности 0 равна: " + maxcount);
+        
+        
+    </script>
+</body>
+</html>
