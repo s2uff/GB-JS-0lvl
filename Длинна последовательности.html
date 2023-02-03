@@ -11,7 +11,11 @@
         var game = [];
         
         for(var n = 0; n < l; n++) {
-            game.push(Math.round(Math.random()*2-1));
+            var k = Math.round(Math.random()*36);
+            if (k != 0) {
+                k = (k % 2) *2 -1;
+            }
+            game.push(k);
         }
         
         alert("Результат бросков: " + game);
