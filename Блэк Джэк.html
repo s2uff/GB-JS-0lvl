@@ -9,16 +9,14 @@
         function getRandomInt (min, max) {
             return Math.floor(Math.random()*(max-min+1)+min);
         }
-        
+
         function getCard() {
             var cards = ["6", "7", "8", "9", "10", "J", "Q", "K", "A"];
             return cards[getRandomInt(0, cards.length-1)];
         }
         
-        var sum = 0;
-        
         function getSum(arr) {
-            
+            var sum = 0;
             var n;
             
             for (n = 0; n < arr.length; n++) {
@@ -44,11 +42,26 @@
             return sum;
         }
     
+        function getStatus() {
+            return "Дилер: " + dealer.join(" ") + " Игрок: " + player.join(" ") + " (Сумма:" + getSum(player) + ")";
+        }
+        
         var dealer = [getCard()];
         var player = [getCard(), getCard()];
         
-        alert("Дилер: " + dealer.join(" ") + " Игрок: " + player.join(" "));
-        alert("Текущая сумма карт у игрока: " + getSum(player));
+        var answer = "";
+        
+        do {
+            answer = prompt(getStatus() + " Хочешь еще карту? 1 - да, другое - нет.");
+            
+            if (answer == "1") {
+                player.push(getCard());
+            }
+            
+            alert(getStatus());
+        } while (answer == "1");
+        
+        
     </script>
 </body>
 </html>
